@@ -1,0 +1,33 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.main-page {
+    background-image: url('../assets/images/space.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-name {
+    font-size: 95px;
+    color: white;
+}
+
+.main-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.login-btn,
+.register-btn {
+    padding: 10px 25px;
+}
