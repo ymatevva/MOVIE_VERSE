@@ -127,8 +127,33 @@ function renderMovies() {
             </div>
         `;
 
-        // TO DO : add onclick methods for buttons of cards
-      
+        card.querySelector(".heart").onclick = () => {
+            movie.favorited = !movie.favorited;
+            localStorage.setItem('movies', JSON.stringify(movies));
+            renderMovies();
+        };
+
+        card.querySelector(".watched").onclick = () => {
+            movie.watched = !movie.watched;
+            localStorage.setItem('movies', JSON.stringify(movies));
+            renderMovies();
+        };
+
+        card.querySelector(".remove-btn").onclick = () => {
+            movies = movies.filter(m => m.title !== movie.title);
+            localStorage.setItem('movies', JSON.stringify(movies));
+            renderMovies();
+        };
+
+        card.querySelector(".more-btn").onclick = () => {
+            localStorage.setItem('selectedMovie', JSON.stringify(movie));
+            if (movie.favorited) {
+                window.location.href = "movie_fav.html";
+            } else {
+                window.location.href = "movie.html";
+            }
+        };
+
         moviesContainer.appendChild(card);
     });
 }
