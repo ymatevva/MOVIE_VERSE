@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Catalogue</title>
+    <link rel="stylesheet" href="css/catalogue.css">
+</head>
+<body>
+<div class="background"></div>
+
+<header>
+    <div class="header-left-section">
+        <button id="home-btn">Home</button>
+    </div>
+    <div class="header-right-section">
+        <button id="favs-btn">Favorites</button>
+        <button id="watched-btn">Watched</button>
+    </div>
+</header>
+
+<main>
+    <div class="sort-buttons">
+        <button id="sort-asc-btn">Sort Asc</button>
+        <button id="sort-desc-btn">Sort Desc</button>
+    </div>
+
+    <section class="movies-container"></section>
+
+    <div class="add-movie-panel">
+        <button id="add-movie-btn">New Movie</button>
+        <div id="add-movie-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Movie Details</h2>
+                <form id="add-movie-form">
+                    <input type="text" id="new-title" placeholder="Title" required>
+                    <input type="number" id="new-duration" placeholder="Duration (minutes)" required>
+                    <input type="date" id="new-release" placeholder="Release Date" required>
+                    <input type="number" id="new-rating" placeholder="Rating (0-5)" min="0" max="5" required>
+                    <input type="text" id="new-director" placeholder="Director" required>
+                    <button type="submit">Sumbit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="js/catalogue.js"></script>
+</body>
+</html>
