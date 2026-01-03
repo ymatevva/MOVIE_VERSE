@@ -18,6 +18,14 @@ homeBtn.addEventListener("click", () => {
     window.location.href = "main.html";
 });
 
+favoritesBtn.addEventListener("click", () => {
+   window.location.href = "favorites.html";
+});
+
+watchedBtn.addEventListener("click", () => {
+   window.location.href = "watched.html";
+});
+
 function loadMovies() {
     const stored = localStorage.getItem("movies");
     if (stored) {
