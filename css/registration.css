@@ -74,3 +74,11 @@ button:hover {
     background-color: rgba(255, 255, 255, 0.6);
     color: rgba(82, 7, 82, 0.7);
 }
+
+.input-invalid {
+    border-color: red;
+}
+
+.input-valid {
+    border-color: green;
+}

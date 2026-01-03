@@ -19,6 +19,6 @@ loginForm.addEventListener("submit", (e) => {
     if (inputPass.value.length >= MIN_LENGTH) {
        window.location.href = "catalogue.html";
     } else {
-        alert('Password must be at least 8 characters.');
+        alert('Please enter correct data.');
     }
 });
