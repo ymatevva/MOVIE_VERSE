@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #fff;
+}
+
+
+.background {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../assets/images/purple_background.jpg') ;
+    background-size: cover;
+    z-index: -1;
+    filter: brightness(0.9);
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background: rgba(82, 7, 82, 0.7);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    box-sizing: border-box;
+    z-index: 5;
+}
+
+header button {
+    background: black;
+    border: 2px solid rgba(82, 7, 82, 0.7);
+    border-radius: 6px;
+    color: rgba(222, 22, 222, 0.7);
+    font-size: 17px;
+    padding: 8px 16px;
+    margin-left: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+header button:hover {
+    background:rgba(112, 11, 112, 0.7);
+    color: black
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    margin-top: 90px;
+    padding: 50px 20px;
+}
+
+.movie-details-card {
+    display: flex;
+    max-width: 1000px;
+     border: 2px  solid purple;
+    background-color: rgba(0,0,0,0.8);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.movie-details-card img {
+    width: 350px;
+    object-fit: cover;
+    border: 1px solid purple
+}
+
+.movie-info {
+    padding: 20px;
+    flex: 1;
+}
+
+.movie-info h1 {
+    margin-top: 0;
+    font-size: 32px;
+    color: purple;
+}
+
+.movie-info p {
+    margin: 8px 0;
+    line-height: 1.5;
+}

@@ -60,25 +60,17 @@ main {
     align-items: flex-start; 
 }
 
-.movie-card {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    background: rgba(127, 66, 142, 0.9);
-    color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
-    width: 350px; 
-    max-width: 100%;
-    box-sizing: border-box;
-}
-
 .movie-card h3 {
     margin: 0 0 5px 0;
 }
 
 .movie-card p {
     margin: 2px 0;
+}
+
+.movie-card .movie-actions{
+    display: flex;
+    justify-content: space-between;
 }
 
 .movie-card .heart {
@@ -93,16 +85,14 @@ main {
 }
 
 .movie-card {
-    display: flex;
-    flex-direction: column;     
+    display: flex;  
     justify-content: space-between;
-    align-content: flex-start;
     background: rgba(127, 66, 142, 0.9);
     color: white;
     padding: 15px;
     border-radius: 5px;
     width: 350px;
-    min-height: 140px;           
+    height: 170px;   
     box-sizing: border-box;
 }
 .add-movie-panel {
@@ -216,4 +206,40 @@ h2 {
     height: 25px;
     width: 60px;
     margin-top: 10px;
+}
+
+.movie-info {
+    flex: 1;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.movie-icons {
+    display: flex;
+    gap: 8px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.movie-actions {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+}
+
+.remove-btn,
+.more-btn {
+    height: auto;
+    width: auto;
+    cursor: pointer;
+    background: rgba(107, 9, 107, 0);
+    border: 0;
+    font-size: 14px;
+    color: rgb(42, 1, 42);
 }

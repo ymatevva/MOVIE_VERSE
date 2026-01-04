@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Details</title>
+    <link rel="stylesheet" href="css/movie_fav.css">
+</head>
+<body>
+    <div class="background"></div>
+    
+    <header>
+        <button id="home-btn">Home</button>
+    </header>
+
+    <main >
+        <div class="movie-details-card">
+            <img id="movie-poster" src="" alt="Movie Poster">
+            <div class="movie-info">
+                <h1 id="movie-title"></h1>
+                <p><strong>Year:</strong> <span id="movie-year"></span></p>
+                <p><strong>Rated:</strong> <span id="movie-rated"></span></p>
+                <p><strong>Director:</strong> <span id="movie-director"></span></p>
+                <p><strong>Writer:</strong> <span id="movie-writer"></span></p>
+                <p><strong>Actors:</strong> <span id="movie-actors"></span></p>
+                <p><strong>Genre:</strong> <span id="movie-genre"></span></p>
+                <p><strong>Plot:</strong> <span id="movie-plot"></span></p>
+                <p><strong>Language:</strong> <span id="movie-language"></span></p>
+                <p><strong>Country:</strong> <span id="movie-country"></span></p>
+                <p><strong>Awards:</strong> <span id="movie-awards"></span></p>
+                <p><strong>IMDb Rating:</strong> <span id="movie-imdbRating"></span></p>
+                <p><strong>Box Office:</strong> <span id="movie-boxoffice"></span></p>
+                <p><strong>Production:</strong> <span id="movie-production"></span></p>
+            </div>
+        </div>
+         <section id="comments-section">
+        <h3>Comments</h3>
+        <form id="comment-form">
+            <input id="comment-author" placeholder="Your name" required />
+            <textarea id="comment-text" maxlength="200" required></textarea>
+                <button type="submit">Add comment</button>
+        </form>
+        <ul id="comments-list"></ul>
+    </section>
+    </main>
+
+    <script src="js/movie_fav.js"></script>
+</body>
+</html>

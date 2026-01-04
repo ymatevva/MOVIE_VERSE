@@ -19,11 +19,11 @@ homeBtn.addEventListener("click", () => {
 });
 
 favoritesBtn.addEventListener("click", () => {
-   window.location.href = "favorites.html";
+    window.location.href = "favorites.html";
 });
 
 watchedBtn.addEventListener("click", () => {
-   window.location.href = "watched.html";
+    window.location.href = "watched.html";
 });
 
 function loadMovies() {
@@ -44,13 +44,11 @@ function loadMovies() {
                 ...m,
                 favorited: false,
                 watched: false,
-                fetchedFromAPI: true
             }));
             localStorage.setItem('movies', JSON.stringify(movies));
             renderMovies();
         })
         .catch(err => {
-            console.error('Error while loading movies:', err);
             alert('Error while loading movies!');
         });
 }
@@ -72,10 +70,10 @@ addMovieForm.addEventListener('submit', e => {
     e.preventDefault();
 
     const title = document.getElementById("new-title").value.trim();
-    if (!title) return alert("Title required");
+    if (!title) return alert("Title is required!");
 
     if (movies.some(m => m.title.toLowerCase() === title.toLowerCase())) {
-        return alert('Movie already exists');
+        return alert('Movie already exists in the database.');
     }
 
     const newMovie = {
@@ -86,7 +84,6 @@ addMovieForm.addEventListener('submit', e => {
         director: document.getElementById("new-director").value,
         favorited: false,
         watched: false,
-        fetchedFromAPI: false
     };
 
     movies.push(newMovie);
@@ -109,23 +106,29 @@ function renderMovies() {
 
     sorted.forEach(movie => {
         const card = document.createElement("div");
-        card.className = "movie-card";
 
+        card.className = "movie-card";
         card.innerHTML = `
-            <div class="movie-info">
-                <h3>${movie.title}</h3>
-                <p><strong>Director:</strong> ${movie.director}</p>
-                <p><strong>Rating:</strong> ${movie.rating}</p>
-                <p><strong>Duration:</strong> ${movie.duration} min</p>
-                <p><strong>Release:</strong> ${movie.releaseDate}</p>
-            </div>
-            <div class="movie-actions">
-                <span class="heart ${movie.favorited ? 'favorited' : ''}">&#10084;</span>
-                <span class="watched">${movie.watched ? '✅' : '⬜'}</span>
-                <button class="remove-btn">Remove</button>
-                <button class="more-btn">More Info</button>
-            </div>
-        `;
+        <div class="movie-info">
+            <h3>${movie.title}</h3>
+            <p><strong>Director:</strong> ${movie.director}</p>
+            <p><strong>Rating:</strong> ${movie.rating}</p>
+            <p><strong>Duration:</strong> ${movie.duration} min</p>
+            <p><strong>Release:</strong> ${movie.releaseDate}</p>
+        </div>
+
+        <div class="options">
+        <div class="movie-icons">
+            <span class="heart ${movie.favorited ? 'favorited' : ''}">&#10084;</span>
+            <span class="watched">${movie.watched ? '✅' : '⬜'}</span>
+        </div>
+ 
+       <div class="movie-actions">
+           <button class="remove-btn">Remove</button>
+           <button class="more-btn">More Info</button>
+        </div>
+    </div>
+`;
 
         card.querySelector(".heart").onclick = () => {
             movie.favorited = !movie.favorited;

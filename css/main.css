@@ -38,7 +38,7 @@ body {
     border: none;
     border-radius: 5px;
     color: #ffffff;
-    background-color: rgba(128, 0, 128, 0.7); /* purple semi-transparent */
+    background-color: rgba(128, 0, 128, 0.7); 
     font-size: 1.4rem;
     transition: all 0.2s ease-in-out;
 }
