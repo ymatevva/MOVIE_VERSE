@@ -1,4 +1,4 @@
-const API_KEY = 'KEY'; 
+const API_KEY = '7e630823'; 
 
 
 const posterEl = document.getElementById('movie-poster');
