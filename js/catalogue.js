@@ -1,6 +1,8 @@
 let movies = [];
 let sortAscending = true;
 
+// TO DO : SEPARATE FAVORITES AND WATCHED FOR DIFFERENT USERS!!
+
 const homeBtn = document.getElementById("home-btn");
 const favoritesBtn = document.getElementById("favs-btn");
 const watchedBtn = document.getElementById("watched-btn");

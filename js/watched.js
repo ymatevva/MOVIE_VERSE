@@ -1,16 +1,15 @@
 let moviesContainer = document.querySelector('.movies-container');
 const homeBtn = document.getElementById("home-btn");
 const favBtn = document.getElementById("favs-btn");
-favBtn.addEventListener("click", () => {
-    window.location.href = "favorites.html";
-});
-
 const watchedBtn = document.getElementById("watched-btn");
 
-watchedBtn.addEventListener("click", () => {
-   window.location.href = "watched.html";
+favBtn.addEventListener("click", () => {
+    window.location.href="favorites.html";
 });
 
+watchedBtn.addEventListener("click", () => {
+   window.location.href="watched.html";
+});
 
 homeBtn.addEventListener("click", () => window.location.href = "catalogue.html");
 
