@@ -15,6 +15,8 @@ const awardsEl = document.getElementById('movie-awards');
 const imdbRatingEl = document.getElementById('movie-imdbRating');
 const boxOfficeEl = document.getElementById('movie-boxoffice');
 const productionEl = document.getElementById('movie-production');
+const durationEl = document.getElementById("movie-duration");
+const releaseDate = document.getElementById("release-date");
 
 const homeBtn = document.getElementById("home-btn");
 const favoritesBtn = document.getElementById("favs-btn");
@@ -64,6 +66,8 @@ async function fetchOMDb(title, year) {
             titleEl.textContent = data.Title;
             yearEl.textContent = data.Year;
             ratedEl.textContent = data.Rated || 'Unknown';
+            durationEl.textContent = data.Runtime || "Unknown";
+            releaseDate.textContent = data.Released || "Unknown";
             directorEl.textContent = data.Director || movie.director || 'Unknown';
             writerEl.textContent = data.Writer || 'Unknown';
             actorsEl.textContent = data.Actors || 'Unknown';
@@ -79,20 +83,12 @@ async function fetchOMDb(title, year) {
         } else {
             posterEl.src = "assets/images/animated-rocket-traveling-to-space-free-video.jpg";
             plotEl.textContent = 'Additional info not available.';
-              titleEl.textContent = data.Title;
-            yearEl.textContent = data.Year;
-            ratedEl.textContent = data.Rated || 'Unknown';
-            directorEl.textContent = data.Director || movie.director || 'Unknown';
-            writerEl.textContent = data.Writer || 'Unknown';
-            actorsEl.textContent = data.Actors || 'Unknown';
-            genreEl.textContent = data.Genre || 'Unknown';
-            plotEl.textContent = data.Plot || 'Unknown';
-            languageEl.textContent = data.Language || 'Unknown';
-            countryEl.textContent = data.Country || 'Unknown';
-            awardsEl.textContent = data.Awards || 'Unknown';
-            imdbRatingEl.textContent = data.imdbRating || 'Unknown';
-            boxOfficeEl.textContent = data.BoxOffice || 'Unknown';
-            productionEl.textContent = data.Production || 'Unknown';
+            titleEl.textContent = movie.title;
+            yearEl.textContent = movie.year;
+            ratedEl.textContent = movie.rating || 'Unknown';
+            durationEl.textContent = movie.duration;
+            releaseDate.textContent = movie.releaseDate;
+
         }
 
     } catch (err) {
