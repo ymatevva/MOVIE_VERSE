@@ -17,12 +17,21 @@ const imdbRatingEl = document.getElementById('movie-imdbRating');
 const boxOfficeEl = document.getElementById('movie-boxoffice');
 const productionEl = document.getElementById('movie-production');
 
-const homeBtn = document.getElementById('home-btn');
+const homeBtn = document.getElementById("home-btn");
+const favoritesBtn = document.getElementById("favs-btn");
+const watchedBtn = document.getElementById("watched-btn");
 
-homeBtn.addEventListener('click', () => {
-    window.location.href = 'catalogue.html';
+homeBtn.addEventListener("click", () => {
+    window.location.href = "catalogue.html";
 });
 
+favoritesBtn.addEventListener("click", () => {
+    window.location.href = "favorites.html";
+});
+
+watchedBtn.addEventListener("click", () => {
+    window.location.href = "watched.html";
+});
 
 const movie = JSON.parse(localStorage.getItem('selectedMovie'));
 if (!movie) {

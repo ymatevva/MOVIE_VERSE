@@ -128,14 +128,3 @@ main {
     font-size: 14px;
     color: rgb(42, 1, 42);
 }
-
-.movie-card .watched {
-    font-size: 20px;
-    cursor: pointer;
-    margin-right: 10px;
-    color: white; 
-}
-
-.movie-card .watched.checked {
-    color: green; 
-}
