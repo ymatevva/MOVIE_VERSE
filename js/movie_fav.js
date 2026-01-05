@@ -1,4 +1,4 @@
-const API_KEY = '7e630823'; 
+const API_KEY = ''; 
 
 
 const posterEl = document.getElementById('movie-poster');
@@ -139,6 +139,23 @@ function renderComments() {
 }
 
 renderComments();
+
+function saveComment(movieTitle, text) {
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    
+    const newComment = {
+        movieTitle: movieTitle,
+        author: currentUser.username,
+        text: text,
+        date: new Date().toLocaleDateString()
+    };
+
+    // Взимаме всички коментари от системата (общи за всички)
+    let allComments = JSON.parse(localStorage.getItem("global_comments")) || [];
+    allComments.push(newComment);
+    
+    localStorage.setItem("global_comments", JSON.stringify(allComments));
+}
 
 commentForm.addEventListener('submit', e => {
     e.preventDefault();

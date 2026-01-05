@@ -1,27 +1,28 @@
-let moviesContainer = document.querySelector('.movies-container');
-const homeBtn = document.getElementById("home-btn");
-const favBtn = document.getElementById("favs-btn");
-const watchedBtn = document.getElementById("watched-btn");
-
-favBtn.addEventListener("click", () => {
-    window.location.href="favorites.html";
-});
-
-watchedBtn.addEventListener("click", () => {
-   window.location.href="watched.html";
-});
-
-homeBtn.addEventListener("click", () => window.location.href = "catalogue.html");
+const currentUserObj = JSON.parse(localStorage.getItem("currentUser"));
+const currentUsername = currentUserObj ? currentUserObj.username : null;
 
 let allMovies = JSON.parse(localStorage.getItem('movies')) || [];
+const moviesContainer = document.querySelector('.movies-container');
 
-function loadWatchedMovies() {
-    const watchedMovies = allMovies.filter(m => m.watched);
-    renderWatchedMovies(watchedMovies);
+document.getElementById("home-btn").onclick = () => window.location.href = "catalogue.html";
+document.getElementById("favs-btn").onclick = () => window.location.href = "favorites.html";
+document.getElementById("watched-btn").onclick = () => window.location.href = "watched.html";
+
+function getUserWatchedTitles() {
+    return JSON.parse(localStorage.getItem(`watched_${currentUsername}`)) || [];
 }
 
-function renderWatchedMovies(watchedMovies) {
+function renderWatched() {
+    if (!moviesContainer) return;
     moviesContainer.innerHTML = '';
+    
+    const userWatchedTitles = getUserWatchedTitles();
+
+    const watchedMovies = allMovies.filter(m => userWatchedTitles.includes(m.title));
+
+    if(watchedMovies.length === 0) {
+        return;
+    }
 
     watchedMovies.forEach(movie => {
         const card = document.createElement('div');
@@ -36,17 +37,10 @@ function renderWatchedMovies(watchedMovies) {
                 <p><strong>Release:</strong> ${movie.releaseDate}</p>
             </div>
             <div class="movie-actions">
-                <span class="watched ${movie.watched ? 'checked' : ''}">${movie.watched ? '✅' : '⬜'}</span>
+                <span class="watched-icon">✅</span>
                 <button class="more-btn">More Info</button>
             </div>
         `;
-
-        const watchedIcon = card.querySelector('.watched');
-        watchedIcon.onclick = () => {
-            movie.watched = !movie.watched;            
-            localStorage.setItem('movies', JSON.stringify(allMovies));
-            loadWatchedMovies();
-        };
 
         card.querySelector('.more-btn').onclick = () => {
             localStorage.setItem('selectedMovie', JSON.stringify(movie));
@@ -57,4 +51,4 @@ function renderWatchedMovies(watchedMovies) {
     });
 }
 
-loadWatchedMovies();
+renderWatched();
