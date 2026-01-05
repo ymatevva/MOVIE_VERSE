@@ -108,7 +108,7 @@ registrationForm.addEventListener("submit", (e) => {
 
         const usernameV = username.value.trim();
         const emailV = emailInput.value.trim();
-        
+
         if(isUserNameInSystemAlready(usernameV)){
            alert("Username is already in the system.");
            return;
@@ -125,7 +125,7 @@ registrationForm.addEventListener("submit", (e) => {
         users.push({ username: usernameV, email: emailV, password: passV });
 
         localStorage.setItem("users", JSON.stringify(users));
-        window.location.href = "catalogue.html";
+        window.location.href = "login.html";
 
     } else {
         alert("Please enter correct data.");

@@ -143,7 +143,8 @@ renderComments();
 commentForm.addEventListener('submit', e => {
     e.preventDefault();
 
-    const author = commentAuthor.value.trim();
+    const currUser = JSON.parse(localStorage.getItem("currentUser"));
+    const author = currUser ? currUser.username : "Anonymous";
     const text = commentText.value.trim();
 
     if (!author || !text) {

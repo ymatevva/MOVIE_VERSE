@@ -64,6 +64,7 @@ loginForm.addEventListener("submit", (e) => {
         return;
        }
 
+       localStorage.setItem("currentUser", JSON.stringify({ username: usernameV }));
        window.location.href = "catalogue.html";
     } else {
         alert('Please enter correct data.');
