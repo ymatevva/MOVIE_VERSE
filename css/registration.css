@@ -82,3 +82,11 @@ button:hover {
 .input-valid {
     border-color: green;
 }
+
+#pass-verification{
+    display: block;
+    justify-self: flex-start;
+    margin-left : 5px;
+    font-size: 14px;
+    color: rgb(148, 141, 141);
+}
