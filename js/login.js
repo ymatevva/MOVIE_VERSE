@@ -1,5 +1,8 @@
 
 const MIN_LENGTH = 8;
+const USER_NOT_IN_SYSTEM = "The user is not registered in the system yet.";
+const PASS_NOT_MATCH = "The given password is not correct.";
+const INCORRECT_DATA = "The password for the given username is not correct.";
 
 const inputPass = document.getElementById("password");
 const username = document.getElementById("username");
@@ -55,18 +58,18 @@ loginForm.addEventListener("submit", (e) => {
        const usernameV = username.value.trim();
        const passV = inputPass.value;
        if (!isUsernameInSystem(usernameV)) {
-        alert("The user is not registered in the system yet.");
+        alert(USER_NOT_IN_SYSTEM);
         return;
        } 
 
        if (!isPasswordMatch(passV, usernameV)) {
-        alert("The password for the given username is not correct.");
+        alert(PASS_NOT_MATCH);
         return;
        }
 
        localStorage.setItem("currentUser", JSON.stringify({ username: usernameV }));
        window.location.href = "catalogue.html";
     } else {
-        alert('Please enter correct data.');
+        alert(INCORRECT_DATA);
     }
 });

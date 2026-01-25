@@ -1,3 +1,5 @@
+const ERROR_LOADING_MOVIE = "Error occured while loading movie.";
+
 const API_KEY = '7e630823'; 
 
 const posterEl = document.getElementById('movie-poster');
@@ -35,6 +37,7 @@ watchedBtn.addEventListener("click", () => {
 });
 
 const movie = JSON.parse(localStorage.getItem('selectedMovie'));
+
 if (!movie) {
     window.location.href = 'catalogue.html';
 } else {
@@ -48,7 +51,9 @@ if (!movie) {
 }
 
 async function fetchOMDb(title, year) {
-    if (!API_KEY || API_KEY === '') return;
+    if (!API_KEY || API_KEY === '') {
+        return;
+    }
 
     try {
         const url = `https://www.omdbapi.com/?t=${encodeURIComponent(title)}&y=${year}&apikey=${API_KEY}`;
@@ -93,6 +98,6 @@ async function fetchOMDb(title, year) {
 
     } catch (err) {
         posterEl.src = "assets/images/animated-rocket-traveling-to-space-free-video.jpg";
-        plotEl.textContent = 'Error loading movie info.';
+        plotEl.textContent = ERROR_LOADING_MOVIE;
     }
 }

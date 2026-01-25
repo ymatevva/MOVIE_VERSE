@@ -1,5 +1,9 @@
 const MIN_LENGTH = 8;
 
+const USER_IN_SYSTEM = "The user is already registered in the system yet.";
+const EMAIL_IN_SYSTEM = "User with this email has account in the system.";
+const INCORRECT_DATA = "The input data is not valid.";
+
 const registrationForm = document.getElementById("registration-form");
 const emailInput = document.getElementById("email");
 const inputPass = document.getElementById("password");
@@ -72,10 +76,10 @@ confirmPass.addEventListener("input", () => {
     }
 });
 
+
 function getUsers() {
     return JSON.parse(localStorage.getItem("users")) || [];
 }
-
 
 function isUserNameInSystemAlready(username) {
 
@@ -110,24 +114,28 @@ registrationForm.addEventListener("submit", (e) => {
         const emailV = emailInput.value.trim();
 
         if(isUserNameInSystemAlready(usernameV)){
-           alert("Username is already in the system.");
+           alert(USER_IN_SYSTEM);
            return;
         }
 
         if (isEmailInSystemAlready(emailV)) {
-            alert("Email is already in the system.");
+            alert(EMAIL_IN_SYSTEM);
             return;
         }
 
         const passV = inputPass.value;
 
         const users = getUsers();
-        users.push({ username: usernameV, email: emailV, password: passV });
+        users.push(
+            { username: usernameV, 
+              email: emailV, 
+              password: passV 
+            }
+        );
 
         localStorage.setItem("users", JSON.stringify(users));
         window.location.href = "login.html";
-
     } else {
-        alert("Please enter correct data.");
+        alert(INCORRECT_DATA);
     }
 });

@@ -10,7 +10,6 @@ body {
     background-size: cover;
     background-position: center;
     height: 100%;
-    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -33,7 +32,6 @@ body {
 
 .login-btn,
 .register-btn {
-    position: relative;
     padding: 10px 25px;
     border: none;
     border-radius: 5px;
@@ -58,4 +56,28 @@ button:hover {
         top: 0;
         opacity: 1;
     }
+}
+
+@media (max-width: 600px) {
+    
+    .app-name {
+        font-size: 45px; 
+    }
+
+    .main-buttons {
+        flex-direction: column; 
+        gap: 15px;
+        width: 80%; 
+    }
+
+    .login-btn,
+    .register-btn {
+        width: 100%; 
+        text-align: center;
+        font-size: 1.2rem; 
+    }
+
+    .main-page {
+    background-position: 70% center; 
+}
 }

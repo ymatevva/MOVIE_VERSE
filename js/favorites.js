@@ -1,5 +1,5 @@
 const currentUserObj = JSON.parse(localStorage.getItem("currentUser"));
-const currentUsername = currentUserObj ? currentUserObj.username : null;
+const currentUsername = currentUserObj.username;
 
 
 let allMovies = JSON.parse(localStorage.getItem('movies')) || [];
@@ -9,9 +9,17 @@ const homeBtn = document.getElementById("home-btn");
 const favoritesBtn = document.getElementById("favs-btn");
 const watchedBtn = document.getElementById("watched-btn");
 
-homeBtn.addEventListener("click", () => { window.location.href = "catalogue.html"; });
-favoritesBtn.addEventListener("click", () => { window.location.href = "favorites.html"; });
-watchedBtn.addEventListener("click", () => { window.location.href = "watched.html"; });
+homeBtn.addEventListener("click", () => {
+    window.location.href = "catalogue.html";
+});
+
+favoritesBtn.addEventListener("click", () => {
+    window.location.href = "favorites.html";
+});
+
+watchedBtn.addEventListener("click", () => {
+    window.location.href = "watched.html";
+});
 
 function getUserFavTitles() {
     return JSON.parse(localStorage.getItem(`favs_${currentUsername}`)) || [];

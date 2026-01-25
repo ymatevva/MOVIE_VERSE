@@ -1,5 +1,10 @@
+const CANNOT_LOAD_MOVIES_FROM_JSON = "Cannot load movies from json.";
+const ERROR_LOADING_MOVIES = "Error while loading movies.";
+const TITLE_REQ_MESSAGE = "Title is required!";
+const MOVIE_ALREADY_EXIST = "Movie already exists in the database.";
+
 const currentUserObj = JSON.parse(localStorage.getItem("currentUser"));
-const currentUsername = currentUserObj ? currentUserObj.username : null;
+const currentUsername = currentUserObj.username;
 
 let movies = [];
 let sortAscending = true;
@@ -16,9 +21,17 @@ const sortAscBtn = document.getElementById("sort-asc-btn");
 const sortDescBtn = document.getElementById("sort-desc-btn");
 const submitBtn = document.getElementById("submit-btn");
 
-homeBtn.addEventListener("click", () => { window.location.href = "main.html"; });
-favoritesBtn.addEventListener("click", () => { window.location.href = "favorites.html"; });
-watchedBtn.addEventListener("click", () => { window.location.href = "watched.html"; });
+homeBtn.addEventListener("click", () => {
+    window.location.href = "main.html";
+});
+
+favoritesBtn.addEventListener("click", () => {
+    window.location.href = "favorites.html";
+});
+
+watchedBtn.addEventListener("click", () => {
+    window.location.href = "watched.html";
+});
 
 function getUserData(type) {
     return JSON.parse(localStorage.getItem(`${type}_${currentUsername}`)) || [];
@@ -45,7 +58,9 @@ function loadMovies() {
 
     fetch('database/movies.json')
         .then(res => {
-            if (!res.ok) throw new Error('Cannot load from movies.json');
+            if (!res.ok) {
+                throw new Error(CANNOT_LOAD_MOVIES_FROM_JSON);
+            }
             return res.json();
         })
         .then(data => {
@@ -54,21 +69,32 @@ function loadMovies() {
             renderMovies();
         })
         .catch(err => {
-            alert('Error while loading movies!');
+            alert(ERROR_LOADING_MOVIES);
         });
 }
 
-addMovieBtn.addEventListener("click", () => { modal.style.display = 'block'; });
-closeModal.addEventListener("click", () => { modal.style.display = 'none'; });
-submitBtn.addEventListener("click", () => { modal.style.display = "none"; });
+addMovieBtn.addEventListener("click", () => {
+    modal.style.display = 'block';
+});
+
+closeModal.addEventListener("click", () => {
+    modal.style.display = 'none';
+});
+
+submitBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+});
+
 
 addMovieForm.addEventListener('submit', e => {
     e.preventDefault();
     const title = document.getElementById("new-title").value.trim();
-    if (!title) return alert("Title is required!");
+    if (!title) {
+        return alert(TITLE_REQ_MESSAGE);
+    }
 
     if (movies.some(m => m.title.toLowerCase() === title.toLowerCase())) {
-        return alert('Movie already exists in the database.');
+        return alert(MOVIE_ALREADY_EXIST);
     }
 
     const newMovie = {
@@ -144,10 +170,3 @@ function renderMovies() {
 }
 
 loadMovies();
-
-window.resetMoviesForTesting = () => {
-    localStorage.removeItem("movies");
-    movies = [];
-    sortAscending = true;
-    loadMovies();
-};

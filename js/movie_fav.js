@@ -1,5 +1,7 @@
-const API_KEY = ''; 
+const ERROR_LOADING_MOVIE = "Error occured while loading movie.";
+const FILL_INFO_MESSAGE = "Please, enter comment."
 
+const API_KEY = '7e630823'; 
 
 const posterEl = document.getElementById('movie-poster');
 const titleEl = document.getElementById('movie-title');
@@ -36,7 +38,8 @@ watchedBtn.addEventListener("click", () => {
 const movie = JSON.parse(localStorage.getItem('selectedMovie'));
 if (!movie) {
     window.location.href = 'catalogue.html';
-} else {
+} 
+else {
     titleEl.textContent = movie.title;
     directorEl.textContent = movie.director || 'Unknown';
     yearEl.textContent = movie.releaseDate ? movie.releaseDate.split('-')[0] : 'Unknown';
@@ -47,7 +50,9 @@ if (!movie) {
 }
 
 async function fetchOMDb(title, year) {
-    if (!API_KEY || API_KEY === '') return;
+    if (!API_KEY || API_KEY === '') {
+        return;
+    }
 
     try {
         const url = `https://www.omdbapi.com/?t=${encodeURIComponent(title)}&y=${year}&apikey=${API_KEY}`;
@@ -80,7 +85,7 @@ async function fetchOMDb(title, year) {
         } else {
             posterEl.src = "assets/images/animated-rocket-traveling-to-space-free-video.jpg";
             plotEl.textContent = 'Additional info not available.';
-              titleEl.textContent = data.Title;
+            titleEl.textContent = data.Title;
             yearEl.textContent = data.Year;
             ratedEl.textContent = data.Rated || 'Unknown';
             directorEl.textContent = data.Director || movie.director || 'Unknown';
@@ -98,16 +103,14 @@ async function fetchOMDb(title, year) {
 
     } catch (err) {
         posterEl.src = "assets/images/animated-rocket-traveling-to-space-free-video.jpg";
-        plotEl.textContent = 'Error loading movie info.';
+        plotEl.textContent = ERROR_LOADING_MOVIE;
     }
 }
-
 
 const commentsList = document.getElementById('comments-list');
 const commentForm = document.getElementById('comment-form');
 const commentAuthor = document.getElementById('comment-author');
 const commentText = document.getElementById('comment-text');
-
 
 const movieKey = movie.title.replace(/\s+/g, '_').toLowerCase();
 const STORAGE_KEY = `comments_${movieKey}`;
@@ -115,7 +118,9 @@ const STORAGE_KEY = `comments_${movieKey}`;
 let comments = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
 
 function renderComments() {
-    if (!commentsList) return; 
+    if (!commentsList) {
+        return; 
+    }
 
     commentsList.innerHTML = '';
 
@@ -140,32 +145,15 @@ function renderComments() {
 
 renderComments();
 
-function saveComment(movieTitle, text) {
-    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-    
-    const newComment = {
-        movieTitle: movieTitle,
-        author: currentUser.username,
-        text: text,
-        date: new Date().toLocaleDateString()
-    };
-
-    // Взимаме всички коментари от системата (общи за всички)
-    let allComments = JSON.parse(localStorage.getItem("global_comments")) || [];
-    allComments.push(newComment);
-    
-    localStorage.setItem("global_comments", JSON.stringify(allComments));
-}
-
 commentForm.addEventListener('submit', e => {
     e.preventDefault();
 
     const currUser = JSON.parse(localStorage.getItem("currentUser"));
-    const author = currUser ? currUser.username : "Anonymous";
+    const author = currUser ? currUser.username : "Anonymous user";
     const text = commentText.value.trim();
 
-    if (!author || !text) {
-        alert("Please fill in both name and comment.");
+    if (!text) {
+        alert(FILL_INFO_MESSAGE);
         return;
     }
 

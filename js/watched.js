@@ -13,14 +13,16 @@ function getUserWatchedTitles() {
 }
 
 function renderWatched() {
-    if (!moviesContainer) return;
+    if (!moviesContainer) {
+        return;
+    }
     moviesContainer.innerHTML = '';
-    
+
     const userWatchedTitles = getUserWatchedTitles();
 
     const watchedMovies = allMovies.filter(m => userWatchedTitles.includes(m.title));
 
-    if(watchedMovies.length === 0) {
+    if (watchedMovies.length === 0) {
         return;
     }
 
@@ -47,6 +49,12 @@ function renderWatched() {
             window.location.href = 'movie.html';
         };
 
+          card.querySelector('.watched-icon').onclick = () => {
+            let updatedWatched = userWatchedTitles.filter(title => title !== movie.title);
+            localStorage.setItem(`watched_${currentUsername}`, JSON.stringify(updatedWatched));
+            renderWatched();
+        };
+        
         moviesContainer.appendChild(card);
     });
 }
