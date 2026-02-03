@@ -43,7 +43,7 @@ if (!movie) {
 } else {
     titleEl.textContent = movie.title;
     directorEl.textContent = movie.director || 'Unknown';
-    yearEl.textContent = movie.releaseDate ? movie.releaseDate.split('-')[0] : 'Unknown';
+    yearEl.textContent = movie.releaseDate ? movie.releaseDate : 'Unknown';
     ratedEl.textContent = 'Unknown';
     plotEl.textContent = 'Unknown';
 
@@ -87,20 +87,19 @@ async function fetchOMDb(title, year) {
         } else {
             posterEl.src = "assets/images/animated-rocket-traveling-to-space-free-video.jpg";
             plotEl.textContent = 'Additional info not available.';
-            titleEl.textContent = data.Title;
-            yearEl.textContent = data.Year;
-            ratedEl.textContent = data.Rated || 'Unknown';
-            directorEl.textContent = data.Director || movie.director || 'Unknown';
-            writerEl.textContent = data.Writer || 'Unknown';
-            actorsEl.textContent = data.Actors || 'Unknown';
-            genreEl.textContent = data.Genre || 'Unknown';
-            plotEl.textContent = data.Plot || 'Unknown';
-            languageEl.textContent = data.Language || 'Unknown';
-            countryEl.textContent = data.Country || 'Unknown';
-            awardsEl.textContent = data.Awards || 'Unknown';
-            imdbRatingEl.textContent = data.imdbRating || 'Unknown';
-            boxOfficeEl.textContent = data.BoxOffice || 'Unknown';
-            productionEl.textContent = data.Production || 'Unknown';
+            titleEl.textContent = movie.title;
+            yearEl.textContent = movie.year;
+            ratedEl.textContent = 'N/A';
+            directorEl.textContent = movie.director || 'N/A';
+            writerEl.textContent = 'N/A';
+            actorsEl.textContent = 'N/A';
+            genreEl.textContent = 'N/A';
+            languageEl.textContent = 'N/A';
+            countryEl.textContent = 'N/A';
+            awardsEl.textContent = 'N/A';
+            imdbRatingEl.textContent = 'N/A';
+            boxOfficeEl.textContent = 'N/A';
+            productionEl.textContent = 'N/A';
         }
 
     } catch (err) {
