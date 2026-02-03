@@ -97,10 +97,17 @@ addMovieForm.addEventListener('submit', e => {
         return alert(MOVIE_ALREADY_EXIST);
     }
 
+    const releaseInput = document.getElementById("new-release");
+
+    if (!releaseInput || !releaseInput.value.trim()) {
+        alert("Release year is required. Try again.");
+        return;
+    }
+
     const newMovie = {
         title: title,
         duration: document.getElementById("new-duration").value || "N/A",
-        releaseDate: document.getElementById("new-release").value, 
+        releaseDate: document.getElementById("new-release").value,
         rating: document.getElementById("new-rating").value || "0",
         director: document.getElementById("new-director").value || "N/A"
     };
