@@ -39,16 +39,16 @@
                         <h2>Movie Details</h2>
                             <form id="add-movie-form">
                                 <input type="text" id="new-title" placeholder="Title" required>
-                                <input type="number" id="new-duration" placeholder="Duration (minutes)" required>
-                                <input type="date" id="new-release" placeholder="Release Date" required>
-                                <input type="number" id="new-rating" placeholder="Rating (0-5)" min="0" max="5"required>
+                                <input type="number" id="new-duration" placeholder="Duration: " min="1" max="500" required>
+                                <input type="date" id="new-release" required>
+                                <input type="number" id="new-rating" placeholder="Rating: " min="0" max="5" required>
                                 <input type="text" id="new-director" placeholder="Director" required>
                                 <button id="submit-btn">Sumbit</button>
                             </form>
                     </div>
                 </div>
             </div>
-            <section>
+        </section>
     </main>
 
     <script src="js/catalogue.js"></script>

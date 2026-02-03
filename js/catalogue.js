@@ -108,7 +108,6 @@ addMovieForm.addEventListener('submit', e => {
     movies.push(newMovie);
     localStorage.setItem('movies', JSON.stringify(movies));
     addMovieForm.reset();
-    modal.style.display = 'none';
     renderMovies();
 });
 

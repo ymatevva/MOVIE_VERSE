@@ -49,6 +49,13 @@ birthdateInput.addEventListener("input", () => {
     const currD = new Date();
     const userAge = currD.getFullYear() - birthD.getFullYear();
 
+    const monthDiff = currD.getMonth() - birthD.getMonth();
+    const dayDiff = currD.getDate() - birthD.getDate();
+
+    if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+        userAge--;
+    }
+
     if (userAge >= 12) {
         birthdateInput.classList.remove("input-invalid");
         birthdateInput.classList.add("input-valid");
