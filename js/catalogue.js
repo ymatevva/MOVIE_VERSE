@@ -100,10 +100,10 @@ addMovieForm.addEventListener('submit', e => {
 
     const newMovie = {
         title: title,
-        duration: document.getElementById("new-duration").value.trim() || "N/A",
+        duration: document.getElementById("new-duration").value.trim() || "Unknown",
         releaseDate: document.getElementById("new-release").value.trim(),
         rating: document.getElementById("new-rating").value.trim() || "0",
-        director: document.getElementById("new-director").value.trim() || "N/A"
+        director: document.getElementById("new-director").value.trim() || "Unknown"
     };
 
     movies.push(newMovie);
@@ -137,7 +137,7 @@ function renderMovies() {
             <h3>${movie.title}</h3>
             <p><strong>Director:</strong> ${movie.director}</p>
             <p><strong>Rating:</strong> ${movie.rating}</p>
-            <p><strong>Duration:</strong> ${movie.duration} min</p>
+            <p><strong>Duration:</strong> ${movie.duration}</p>
             <p><strong>Release:</strong> ${movie.releaseDate}</p>
         </div>
         <div class="options">
