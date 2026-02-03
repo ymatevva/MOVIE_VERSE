@@ -125,7 +125,7 @@ function renderComments() {
     commentsList.innerHTML = '';
 
     if (comments.length === 0) {
-        commentsList.innerHTML = '<li class="no-comments">No comments yet. Be the first!</li>';
+        commentsList.innerHTML = '<li class="no-comments">No comments yet.</li>';
         return;
     }
 
