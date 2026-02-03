@@ -22,7 +22,7 @@ const sortDescBtn = document.getElementById("sort-desc-btn");
 const submitBtn = document.getElementById("submit-btn");
 
 homeBtn.addEventListener("click", () => {
-    window.location.href = "main.html";
+    window.location.href = "index.html";
 });
 
 favoritesBtn.addEventListener("click", () => {
