@@ -43,9 +43,8 @@ if (!movie) {
 } else {
     titleEl.textContent = movie.title;
     directorEl.textContent = movie.director || 'Unknown';
-    yearEl.textContent = movie.releaseDate ? movie.releaseDate : 'Unknown';
-    ratedEl.textContent = movie.rating ? movie.rating : 'Unknown';
-    plotEl.textContent = 'Unknown';
+    yearEl.textContent = movie.releaseDate ? movie.releaseDate.split('-')[0] : 'Unknown';
+    ratedEl.textContent = movie.rating || "Unknown";
 
     fetchOMDb(movie.title, yearEl.textContent);
 }
@@ -56,7 +55,8 @@ async function fetchOMDb(title, year) {
     }
 
     try {
-        const url = `https://www.omdbapi.com/?t=${encodeURIComponent(title)}&y=${year}&apikey=${API_KEY}`; const res = await fetch(url);
+        const url = `https://www.omdbapi.com/?t=${encodeURIComponent(title)}&y=${year}&apikey=${API_KEY}`;
+        const res = await fetch(url);
         const data = await res.json();
 
         if (data.Response === 'True'
@@ -84,22 +84,35 @@ async function fetchOMDb(title, year) {
             boxOfficeEl.textContent = data.BoxOffice || 'Unknown';
             productionEl.textContent = data.Production || 'Unknown';
 
+            movie.director = data.Director;
+            movie.duration = data.Runtime;
+
+            const allMovies = JSON.parse(localStorage.getItem('movies')) || [];
+            const index = allMovies.findIndex(m => m.title.toLowerCase() === movie.title.toLowerCase());
+
+            if (index !== -1) {
+                allMovies[index].director = data.Director;
+                allMovies[index].duration = data.Runtime;
+                localStorage.setItem('movies', JSON.stringify(allMovies));
+            }
+
         } else {
             posterEl.src = "assets/images/animated-rocket-traveling-to-space-free-video.jpg";
             plotEl.textContent = 'Additional info not available.';
             titleEl.textContent = movie.title;
             yearEl.textContent = movie.releaseDate;
-            ratedEl.textContent = movie.rating || 'N/A';
-            directorEl.textContent = movie.director || 'N/A';
-            writerEl.textContent = 'N/A';
-            actorsEl.textContent = 'N/A';
-            genreEl.textContent = 'N/A';
-            languageEl.textContent = 'N/A';
-            countryEl.textContent = 'N/A';
-            awardsEl.textContent = 'N/A';
-            imdbRatingEl.textContent = 'N/A';
-            boxOfficeEl.textContent = 'N/A';
-            productionEl.textContent = 'N/A';
+            ratedEl.textContent = movie.rating || 'Unknown';
+            directorEl.textContent = movie.director || 'Unknown';
+            writerEl.textContent = 'Unknown';
+            actorsEl.textContent = 'Unknown';
+            genreEl.textContent = 'Unknown';
+            plotEl.textContent = 'Unknown';
+            languageEl.textContent = 'Unknown';
+            countryEl.textContent = 'Unknown';
+            awardsEl.textContent = 'Unknown';
+            imdbRatingEl.textContent = 'Unknown';
+            boxOfficeEl.textContent = 'Unknown';
+            productionEl.textContent = 'Unknown';
         }
 
     } catch (err) {

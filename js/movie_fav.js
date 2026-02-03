@@ -40,11 +40,10 @@ if (!movie) {
     window.location.href = 'catalogue.html';
 }
 else {
-    titleEl.textContent = movie.title;
+    titleEl.textContent = movie.title || 'Unknown';
     directorEl.textContent = movie.director || 'Unknown';
-    yearEl.textContent = movie.releaseDate ? movie.releaseDate : 'Unknown';
-    ratedEl.textContent = movie.rating ? movie.rating : "Unknown";
-    plotEl.textContent = 'Unknown';
+    yearEl.textContent = movie.releaseDate || 'Unknown';
+    ratedEl.textContent = movie.rating || 'Unknown';
 
     fetchOMDb(movie.title, yearEl.textContent);
 }
@@ -85,8 +84,8 @@ async function fetchOMDb(title, year) {
         } else {
             posterEl.src = "assets/images/animated-rocket-traveling-to-space-free-video.jpg";
             plotEl.textContent = 'Additional info not available.';
-            titleEl.textContent = movie.title;
-            yearEl.textContent = movie.releaseDate;
+            titleEl.textContent = title;
+            yearEl.textContent = year;
             ratedEl.textContent = movie.rating || 'N/A';
             directorEl.textContent = movie.director || 'N/A';
             writerEl.textContent = 'N/A';
