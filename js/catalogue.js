@@ -98,11 +98,11 @@ addMovieForm.addEventListener('submit', e => {
     }
 
     const newMovie = {
-        title,
-        duration: document.getElementById("new-duration").value,
-        releaseDate: document.getElementById("new-release").value,
-        rating: document.getElementById("new-rating").value,
-        director: document.getElementById("new-director").value
+        title: title,
+        duration: document.getElementById("new-duration").value || "N/A",
+        releaseDate: document.getElementById("new-release").value, 
+        rating: document.getElementById("new-rating").value || "0",
+        director: document.getElementById("new-director").value || "N/A"
     };
 
     movies.push(newMovie);

@@ -2,7 +2,9 @@ const MIN_LENGTH = 8;
 
 const USER_IN_SYSTEM = "The user is already registered in the system yet.";
 const EMAIL_IN_SYSTEM = "User with this email has account in the system.";
-const INCORRECT_DATA = "The input data is not valid.";
+const AGE_RESTICT = "Age restriction. At least 12 years old users.";
+const PASS_RESTRICT = "Password should be at least 8 symbols.";
+const EMAIL_RESTRICT = "Email is not valid.";
 
 const registrationForm = document.getElementById("registration-form");
 const emailInput = document.getElementById("email");
@@ -143,6 +145,14 @@ registrationForm.addEventListener("submit", (e) => {
         localStorage.setItem("users", JSON.stringify(users));
         window.location.href = "login.html";
     } else {
-        alert(INCORRECT_DATA);
+        if (!isBirthdateValid) {
+            alert(AGE_RESTICT);
+        }
+        if (!isPasswordValid) {
+            alert(PASS_RESTRICT);
+        }
+        if(!isEmailValid) {
+            alert(EMAIL_RESTRICT);
+        }
     }
 });
