@@ -1,114 +1,72 @@
 [
   {
-    "title": "Inception",
-    "duration": 148,
-    "releaseDate": "2010-07-16",
-    "rating": 4.8,
-    "director": "Christopher Nolan"
-  },
-  {
-    "title": "Interstellar",
-    "duration": 169,
-    "releaseDate": "2014-11-07",
-    "rating": 4.7,
-    "director": "Christopher Nolan"
-  },
-  {
-    "title": "The Matrix",
-    "duration": 136,
-    "releaseDate": "1999-03-31",
-    "rating": 4.9,
-    "director": "Lana Wachowski, Lilly Wachowski"
-  },
-  {
-    "title": "The Dark Knight",
-    "duration": 152,
-    "releaseDate": "2008-07-18",
-    "rating": 4.9,
-    "director": "Christopher Nolan"
-  },
-  {
-    "title": "Fight Club",
-    "duration": 139,
-    "releaseDate": "1999-10-15",
-    "rating": 4.6,
-    "director": "David Fincher"
-  },
-  {
-    "title": "Forrest Gump",
-    "duration": 142,
-    "releaseDate": "1994-07-06",
-    "rating": 4.8,
-    "director": "Robert Zemeckis"
-  },
-  {
-    "title": "The Godfather",
-    "duration": 175,
-    "releaseDate": "1972-03-24",
-    "rating": 4.9,
-    "director": "Francis Ford Coppola"
-  },
-  {
-    "title": "Pulp Fiction",
-    "duration": 154,
-    "releaseDate": "1994-10-14",
-    "rating": 4.9,
-    "director": "Quentin Tarantino"
-  },
-  {
-    "title": "Gladiator",
-    "duration": 155,
-    "releaseDate": "2000-05-05",
-    "rating": 4.5,
-    "director": "Ridley Scott"
-  },
-  {
-    "title": "The Lion King",
-    "duration": 88,
-    "releaseDate": "1994-06-15",
-    "rating": 4.5,
-    "director": "Roger Allers, Rob Minkoff"
-  },
-  {
-    "title": "Spirited Away",
-    "duration": 125,
-    "releaseDate": "2001-07-20",
-    "rating": 4.6,
-    "director": "Hayao Miyazaki"
-  },
-  {
-    "title": "The Shawshank Redemption",
-    "duration": 142,
-    "releaseDate": "1994-09-22",
-    "rating": 4.9,
-    "director": "Frank Darabont"
-  },
-  {
-    "title": "Parasite",
-    "duration": 132,
-    "releaseDate": "2019-05-30",
-    "rating": 4.6,
-    "director": "Bong Joon-ho"
-  },
-  {
-    "title": "Joker",
-    "duration": 122,
-    "releaseDate": "2019-10-04",
-    "rating": 4.4,
-    "director": "Todd Phillips"
-  },
-  {
-    "title": "Dune",
-    "duration": 155,
-    "releaseDate": "2021-10-22",
-    "rating": 4.0,
-    "director": "Denis Villeneuve"
-  },
-  {
-    "title": "The Prestige",
+    "title": "Knives Out",
     "duration": 130,
-    "releaseDate": "2006-10-20",
+    "releaseDate": "2019-11-27",
+    "rating": 4.6,
+    "director": "Rian Johnson"
+  },
+  {
+    "title": "Glass Onion",
+    "duration": 139,
+    "releaseDate": "2022-12-23",
+    "rating": 4.4,
+    "director": "Rian Johnson"
+  },
+  {
+    "title": "Wake Up Dead Man",
+    "duration": 125,
+    "releaseDate": "2025-05-01",
     "rating": 4.5,
+    "director": "Rian Johnson"
+  },
+  {
+    "title": "Emma.",
+    "duration": 124,
+    "releaseDate": "2020-02-21",
+    "rating": 4.5,
+    "director": "Autumn de Wilde"
+  },
+  {
+    "title": "Wuthering Heights",
+    "duration": 129,
+    "releaseDate": "2011-11-11",
+    "rating": 4.3,
+    "director": "Andrea Arnold"
+  },
+  {
+    "title": "Pride & Prejudice",
+    "duration": 127,
+    "releaseDate": "2005-09-16",
+    "rating": 4.8,
+    "director": "Joe Wright"
+  },
+  {
+    "title": "The Notebook",
+    "duration": 123,
+    "releaseDate": "2004-06-25",
+    "rating": 4.7,
+    "director": "Nick Cassavetes"
+  },
+  {
+    "title": "Little Women",
+    "duration": 135,
+    "releaseDate": "2019-12-25",
+    "rating": 4.9,
+    "director": "Greta Gerwig"
+  },
+  {
+    "title": "Sense and Sensibility",
+    "duration": 136,
+    "releaseDate": "1995-12-15",
+    "rating": 4.8,
+    "director": "Ang Lee"
+  },
+  {
+    "title": "Oppenheimer",
+    "duration": 180,
+    "releaseDate": "2023-07-21",
+    "rating": 4.9,
     "director": "Christopher Nolan"
   },
   {
