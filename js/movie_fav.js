@@ -1,7 +1,7 @@
 const ERROR_LOADING_MOVIE = "Error occured while loading movie.";
 const FILL_INFO_MESSAGE = "Please, enter comment."
 
-const API_KEY = '741ae286'; 
+const API_KEY = '741ae286';
 
 const posterEl = document.getElementById('movie-poster');
 const titleEl = document.getElementById('movie-title');
@@ -38,7 +38,7 @@ watchedBtn.addEventListener("click", () => {
 const movie = JSON.parse(localStorage.getItem('selectedMovie'));
 if (!movie) {
     window.location.href = 'catalogue.html';
-} 
+}
 else {
     titleEl.textContent = movie.title;
     directorEl.textContent = movie.director || 'Unknown';
@@ -56,10 +56,10 @@ async function fetchOMDb(title, year) {
 
     try {
         const url = `https://www.omdbapi.com/?t=${encodeURIComponent(title)}&y=${year}&apikey=${API_KEY}`;
-        const res = await fetch(url);
+         const res = await fetch(url);
         const data = await res.json();
 
-        if (data.Response === 'True' 
+        if (data.Response === 'True'
             && data.Title.toLowerCase() === title.toLowerCase()
             && data.Year === year) {
 
@@ -119,7 +119,7 @@ let comments = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
 
 function renderComments() {
     if (!commentsList) {
-        return; 
+        return;
     }
 
     commentsList.innerHTML = '';
@@ -164,8 +164,8 @@ commentForm.addEventListener('submit', e => {
     const newComment = {
         author,
         text,
-        date: new Date().toLocaleDateString() + ' ' 
-        + new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
+        date: new Date().toLocaleDateString() + ' '
+            + new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
     };
 
     comments.push(newComment);

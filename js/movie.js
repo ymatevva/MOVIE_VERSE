@@ -1,6 +1,6 @@
 const ERROR_LOADING_MOVIE = "Error occured while loading movie.";
 
-const API_KEY = '741ae286'; 
+const API_KEY = '741ae286';
 
 const posterEl = document.getElementById('movie-poster');
 const titleEl = document.getElementById('movie-title');
@@ -56,11 +56,10 @@ async function fetchOMDb(title, year) {
     }
 
     try {
-        const url = `https://www.omdbapi.com/?t=${encodeURIComponent(title)}&y=${year}&apikey=${API_KEY}`;
-        const res = await fetch(url);
+        const url = `https://www.omdbapi.com/?t=${encodeURIComponent(title)}&y=${year}&apikey=${API_KEY}`; const res = await fetch(url);
         const data = await res.json();
 
-        if (data.Response === 'True' 
+        if (data.Response === 'True'
             && data.Title.toLowerCase() === title.toLowerCase()
             && data.Year === year) {
 
@@ -86,7 +85,7 @@ async function fetchOMDb(title, year) {
             productionEl.textContent = data.Production || 'Unknown';
 
         } else {
-           posterEl.src = "assets/images/animated-rocket-traveling-to-space-free-video.jpg";
+            posterEl.src = "assets/images/animated-rocket-traveling-to-space-free-video.jpg";
             plotEl.textContent = 'Additional info not available.';
             titleEl.textContent = data.Title;
             yearEl.textContent = data.Year;
