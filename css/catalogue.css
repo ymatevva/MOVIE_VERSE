@@ -256,7 +256,7 @@ h2 {
         flex-direction: column;
         align-items: center;
         gap: 12px;
-        position: relative; 
+        position: fixed; 
         padding: 15px;
     }
 
@@ -275,8 +275,8 @@ h2 {
     }
 
     main {
+        margin-top: 150px;
         flex-direction: column;
-        margin-top: 20px;
         gap: 30px;
         padding: 10px;
     }
