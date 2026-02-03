@@ -97,9 +97,9 @@ addMovieForm.addEventListener('submit', e => {
         return alert(MOVIE_ALREADY_EXIST);
     }
 
-    const releaseInput = document.getElementById("new-release");
+    const releaseInput = document.getElementById("new-release").value.trim();
 
-    if (!releaseInput || !releaseInput.value.trim()) {
+    if (!releaseInput) {
         alert("Release year is required. Try again.");
         return;
     }
