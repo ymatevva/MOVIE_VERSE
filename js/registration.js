@@ -49,7 +49,7 @@ birthdateInput.addEventListener("input", () => {
 
     const birthD = new Date(birthdateInput.value);
     const currD = new Date();
-    const userAge = currD.getFullYear() - birthD.getFullYear();
+    let userAge = currD.getFullYear() - birthD.getFullYear();
 
     const monthDiff = currD.getMonth() - birthD.getMonth();
     const dayDiff = currD.getDate() - birthD.getDate();
