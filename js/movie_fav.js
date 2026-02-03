@@ -43,7 +43,7 @@ else {
     titleEl.textContent = movie.title;
     directorEl.textContent = movie.director || 'Unknown';
     yearEl.textContent = movie.releaseDate ? movie.releaseDate : 'Unknown';
-    ratedEl.textContent = 'Unknown';
+    ratedEl.textContent = movie.rating ? movie.rating : "Unknown";
     plotEl.textContent = 'Unknown';
 
     fetchOMDb(movie.title, yearEl.textContent);
@@ -86,8 +86,8 @@ async function fetchOMDb(title, year) {
             posterEl.src = "assets/images/animated-rocket-traveling-to-space-free-video.jpg";
             plotEl.textContent = 'Additional info not available.';
             titleEl.textContent = movie.title;
-            yearEl.textContent = movie.year;
-            ratedEl.textContent = 'N/A';
+            yearEl.textContent = movie.releaseDate;
+            ratedEl.textContent = movie.rating || 'N/A';
             directorEl.textContent = movie.director || 'N/A';
             writerEl.textContent = 'N/A';
             actorsEl.textContent = 'N/A';
