@@ -40,5 +40,103 @@
     "releaseDate": "1994-07-06",
     "rating": 4.8,
     "director": "Robert Zemeckis"
+  },
+  {
+    "title": "The Godfather",
+    "duration": 175,
+    "releaseDate": "1972-03-24",
+    "rating": 4.9,
+    "director": "Francis Ford Coppola"
+  },
+  {
+    "title": "Pulp Fiction",
+    "duration": 154,
+    "releaseDate": "1994-10-14",
+    "rating": 4.9,
+    "director": "Quentin Tarantino"
+  },
+  {
+    "title": "Gladiator",
+    "duration": 155,
+    "releaseDate": "2000-05-05",
+    "rating": 4.5,
+    "director": "Ridley Scott"
+  },
+  {
+    "title": "The Lion King",
+    "duration": 88,
+    "releaseDate": "1994-06-15",
+    "rating": 4.5,
+    "director": "Roger Allers, Rob Minkoff"
+  },
+  {
+    "title": "Spirited Away",
+    "duration": 125,
+    "releaseDate": "2001-07-20",
+    "rating": 4.6,
+    "director": "Hayao Miyazaki"
+  },
+  {
+    "title": "The Shawshank Redemption",
+    "duration": 142,
+    "releaseDate": "1994-09-22",
+    "rating": 4.9,
+    "director": "Frank Darabont"
+  },
+  {
+    "title": "Spider-Man: Into the Spider-Verse",
+    "duration": 117,
+    "releaseDate": "2018-12-14",
+    "rating": 4.4,
+    "director": "Bob Persichetti, Peter Ramsey, Rodney Rothman"
+  },
+  {
+    "title": "Parasite",
+    "duration": 132,
+    "releaseDate": "2019-05-30",
+    "rating": 4.6,
+    "director": "Bong Joon-ho"
+  },
+  {
+    "title": "Joker",
+    "duration": 122,
+    "releaseDate": "2019-10-04",
+    "rating": 4.4,
+    "director": "Todd Phillips"
+  }
+  {
+    "title": "Dune",
+    "duration": 155,
+    "releaseDate": "2021-10-22",
+    "rating": 4.0,
+    "director": "Denis Villeneuve"
+  },
+  {
+    "title": "The Prestige",
+    "duration": 130,
+    "releaseDate": "2006-10-20",
+    "rating": 4.5,
+    "director": "Christopher Nolan"
+  },
+  {
+    "title": "Django Unchained",
+    "duration": 165,
+    "releaseDate": "2012-12-25",
+    "rating": 4.4,
+    "director": "Quentin Tarantino"
+  },
+  {
+    "title": "Back to the Future",
+    "duration": 116,
+    "releaseDate": "1985-07-03",
+    "rating": 4.5,
+    "director": "Robert Zemeckis"
+  },
+  {
+    "title": "The Silence of the Lambs",
+    "duration": 118,
+    "releaseDate": "1991-02-14",
+    "rating": 4.6,
+    "director": "Jonathan Demme"
   }
 ]
