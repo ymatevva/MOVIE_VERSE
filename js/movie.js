@@ -1,6 +1,6 @@
 const ERROR_LOADING_MOVIE = "Error occured while loading movie.";
 
-const API_KEY = 'API_KEY_PLACEHOLDER';
+const API_KEY = '741ae286';
 
 const posterEl = document.getElementById('movie-poster');
 const titleEl = document.getElementById('movie-title');
@@ -85,7 +85,7 @@ async function fetchOMDb(title, year) {
             productionEl.textContent = data.Production || 'Unknown';
 
             movie.director = data.Director;
-            movie.duration = data.Runtime;
+            movie.duration = data.duration;
 
             const allMovies = JSON.parse(localStorage.getItem('movies')) || [];
             const index = allMovies.findIndex(m => m.title.toLowerCase() === movie.title.toLowerCase());
