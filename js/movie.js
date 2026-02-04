@@ -85,7 +85,7 @@ async function fetchOMDb(title, year) {
             productionEl.textContent = data.Production || 'Unknown';
 
             movie.director = data.Director;
-            movie.duration = data.duration;
+            movie.duration = data.Runtime;
 
             const allMovies = JSON.parse(localStorage.getItem('movies')) || [];
             const index = allMovies.findIndex(m => m.title.toLowerCase() === movie.title.toLowerCase());
