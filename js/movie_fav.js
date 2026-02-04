@@ -1,7 +1,7 @@
 const ERROR_LOADING_MOVIE = "Error occured while loading movie.";
 const FILL_INFO_MESSAGE = "Please, enter comment."
 
-const API_KEY = '741ae286';
+const API_KEY = 'API_KEY_PLACEHOLDER';
 
 const posterEl = document.getElementById('movie-poster');
 const titleEl = document.getElementById('movie-title');
